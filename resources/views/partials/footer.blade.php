@@ -1,4 +1,5 @@
-<footer class="d-flex justify-content-center align-items-center p-2 vh-20">
+<footer class="d-flex justify-content-center align-items-center p-2" style="height: 
+15vh;">
   <ul class="d-flex justify-content-center align-items-center w-50 m-auto list-unstyled border-top p-2">
     <li class="m-auto">
       <a href=""><i class="fab fa-facebook-f"></i></a>

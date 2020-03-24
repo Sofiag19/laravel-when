@@ -1,4 +1,5 @@
-<header class="d-flex justify-content-between align-items-center p-2 vh-20 border-bottom">
+<header class="d-flex justify-content-between align-items-center p-2 border-bottom" style="height: 
+15vh;">
   <div class="w-25 align-items-center">
     <img src="https://pngimage.net/wp-content/uploads/2018/06/not-found-png-3.png" alt="" style="width: 50px;">
   </div>
