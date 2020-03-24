@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Product;
 use App\Category;
+use App\User;
 
 
 class ProductSeeder extends Seeder
@@ -18,6 +19,10 @@ class ProductSeeder extends Seeder
             $cat = Category::inRandomOrder() -> first();
             $product->category() ->associate($cat);
             $product -> save();
+
+            $users = User::inRandomOrder() ->take(5) -> get();
+
+            $product -> users() -> attach($users);
             });
     }
 }

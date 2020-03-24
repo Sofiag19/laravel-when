@@ -17,6 +17,26 @@ class AddFk extends Migration
             $table->bigInteger('category_id')->unsigned()->index();
             $table->foreign('category_id', 'category_products')->references('id')->on('categories');
         });
+
+        Schema::table('product_user', function (Blueprint $table) {
+
+            $table->bigInteger('product_id')
+                ->unsigned()
+                ->index();
+
+            $table->foreign('product_id', 'prod_us')
+                ->references('id')
+                ->on('products');
+
+            $table->bigInteger('user_id')
+                ->unsigned()
+                ->index();
+
+            $table->foreign('user_id', 'us_prod')
+                ->references('id')
+                ->on('users');
+        });
+
     }
 
     /**
@@ -29,6 +49,14 @@ class AddFk extends Migration
         Schema::table('products', function (Blueprint $table) {
             $table->dropForeign('category_products');
             $table->dropColumn('category_id');
+        });
+
+        Schema::table('product_user', function (Blueprint $table) {
+            $table->dropForeign('prod_us');
+            $table->dropColumn('product_id');
+
+            $table->dropForeign('us_prod');
+            $table->dropColumn('user_id');
         });
     }
 }
